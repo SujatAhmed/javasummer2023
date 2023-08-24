@@ -6,12 +6,14 @@ import com.sun.tools.javac.Main;
 public class rectangle {
 
 	public static void main(String[] args) {
+	    newrectangle rect1 = new newrectangle();
+		System.out.println(rect1.H);
 		
 
 	}
 }
 
-public class newrectangle {
+class newrectangle {
 	double H = 1.0;
 	double W = 1.0;
 
@@ -31,7 +33,7 @@ public class newrectangle {
 	double getperimeter(){
 		return 2*(H+W);
 	}
-	double setnewparameters(double newH, double newW){
+	void setnewparameters(double newH, double newW){
 
 		H = newH;
 		W = newW;
