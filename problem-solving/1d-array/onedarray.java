@@ -1,7 +1,7 @@
 public class onedarray {
 	public static void main(String[] args) {
 		
-		int[] arr = {1,0,1,0,0,1,1,1,1,1};
+		int[] arr = {0,0,0,0,0,0,0,0,0,0};
 		int leap = 3;
 		int[] posarray = new int[10];
 		int[] specialarray= new int[10];
@@ -21,17 +21,21 @@ public class onedarray {
 
 		}
 
-		System.out.println(function(0, leap, posarray, specialarray));
+		//System.out.println(function(0, leap, posarray, specialarray));
 
+		function(0, leap, posarray, specialarray);
 	}
 
-	public static int function(int position1, int leap, int[] posarraynull,int[] specialarraynull ) {
+	public static void function(int position1, int leap, int[] posarraynull,int[] specialarraynull ) {
 		int newposition1 = position1;
 		int newposition2 = position1; 
 		newposition1++;
 		newposition2= newposition2+leap;
 		int[] newarray = new int[10];
 		int[] newposarray = new int[10];
+		boolean check1 = false;
+		boolean check2 = false;
+		boolean check = false;
 
 
 		for (int i = 0; i < newarray.length; i++) {
@@ -45,15 +49,23 @@ public class onedarray {
 		
 		for(int i = 0; i<10; i++){
 			if(newposition1==newarray[i] || newposition2==newarray[i]){
-				return 1;
+				check = true;
+				System.out.println("True");
+				
  
+
 
 			}
 		}
+		if(check){
+			return;
+		}
+
+
 
 		for (int i = 0; i <10 ; i++) {
 			if(newposition1==posarraynull[i]){
-				 return function(newposition1, leap, newposarray, newarray );
+				check1 = true ;
 				
 
 			}
@@ -62,14 +74,29 @@ public class onedarray {
 
 		for (int i = 0; i <10 ; i++) {
 			if(newposition2==posarraynull[i]){
-				 return function(newposition2, leap, newposarray, newarray );
+				
+				check2 = true ;
 				
 
 			}
 			
 		}
+		if(check1){
+			function(newposition1, leap, newposarray, newarray);
+			
+		}
+		if(check2){
+			function(newposition2, leap, newposarray, newarray);
+		}
+		if(!(check1&&check2)){
+			System.out.println("False");
+			return;
+		}
 
-		return 0;	
+
+
+
+			
 
 
 		
