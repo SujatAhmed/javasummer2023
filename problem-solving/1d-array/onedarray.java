@@ -50,15 +50,12 @@ public class onedarray {
 		for(int i = 0; i<10; i++){
 			if(newposition1==newarray[i] || newposition2==newarray[i]){
 				check = true;
-				System.out.println("True");
+				break;
 				
  
 
 
 			}
-		}
-		if(check){
-			return;
 		}
 
 
@@ -66,6 +63,7 @@ public class onedarray {
 		for (int i = 0; i <10 ; i++) {
 			if(newposition1==posarraynull[i]){
 				check1 = true ;
+				break;
 				
 
 			}
@@ -81,15 +79,19 @@ public class onedarray {
 			}
 			
 		}
-		if(check1){
+		if(check){
+			System.out.println(check);
+			return;
+		}
+		else if(check1){
 			function(newposition1, leap, newposarray, newarray);
 			
 		}
-		if(check2){
+		else if(check2){
 			function(newposition2, leap, newposarray, newarray);
 		}
-		if(!(check1&&check2)){
-			System.out.println("False");
+		else if(!(check1&&check2)){
+			System.out.println(check1);
 			return;
 		}
 
