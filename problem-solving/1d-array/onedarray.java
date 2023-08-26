@@ -38,6 +38,8 @@ public class onedarray {
 		boolean check = false;
 
 
+
+		//most prolly reduntant but I still copied the arrays to different arrays just in case
 		for (int i = 0; i < newarray.length; i++) {
 			newarray[i]=specialarraynull[i];
 			
@@ -47,13 +49,11 @@ public class onedarray {
 			
 		}
 		
+		//checks if the current position is equal to any of the special array , i.e length-leap
 		for(int i = 0; i<10; i++){
 			if(newposition1==newarray[i] || newposition2==newarray[i]){
 				check = true;
 				break;
-				
- 
-
 
 			}
 		}
@@ -79,6 +79,7 @@ public class onedarray {
 			}
 			
 		}
+		//if we reach the end we win
 		if(check){
 			System.out.println(check);
 			return;
