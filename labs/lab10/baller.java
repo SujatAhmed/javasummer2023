@@ -18,14 +18,18 @@ public class baller {
 
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setName(Scanner scanner) {
+		System.out.println("Enter the name of the player");
+		this.name = scanner.nextLine();
 	}
-	public void setTeam(String team) {
-		this.team = team;
+	public void setTeam(Scanner scanner) {
+		System.out.println("Enter the  team of the player");
+		this.team = scanner.nextLine();
+
 	}
-	public void setPosition(String position) {
-		this.position = position;
+	public void setPosition(Scanner scanner) {
+		System.out.println("Enter the  position of the player");
+		this.position= scanner.nextLine();
 	}
 
 	public void setGoals(Scanner scanner ){
@@ -140,6 +144,14 @@ public class baller {
 		return finalavggc;
 		
 	}
+	public double goalstoassistsratio(){
+		double ratio;
+		ratio = (double)this.totalGoals/(double)this.totalAssists;
+		DecimalFormat df = new DecimalFormat("0.00");
+		String roundedValue = df.format(ratio);
+		double finalratio = Double.parseDouble(roundedValue);
+		return finalratio;
+	}
 	public void comparefootballers(baller otherballer){
 		if(this.totalGoals>otherballer.totalGoals && this.totalAssists>otherballer.totalAssists){
 			System.out.println(this.name + " has more goals and assists than " + otherballer.name);
@@ -156,28 +168,42 @@ public class baller {
 		}
 
 	}
+	public void printdata(){
+		System.out.printf("%-20s %-10d %-10.2f %-10.2f %-10.2f %-10.2f%n", 
+            name, matches, getAveragegoals(), getAverageassists(), getAveragegoalcontribution(), goalstoassistsratio());
+
+	}
 
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		baller[] player = new baller[5];
-		player[0] = new baller();
-		player[1] = new baller();
-		player[0].setName("messi");
-		player[0].setTeam("barcelona");
-		player[0].setPosition("attacking midfielder");
-		player[0].setGoals(scanner);
-		player[0].setAssists(scanner);
-		player[0].setTotalgoals();
-		player[0].setTotalassists();
-		player[1].setName("ronaldo");
-		player[1].setTeam("realmadrid");
-		player[1].setPosition("center forward ");
-		player[1].setGoals(scanner);
-		player[1].setAssists(scanner);
-		player[1].setTotalgoals();
-		player[1].setTotalassists();
-		player[0].comparefootballers(player[1]);
+		for (int i = 0; i < player.length; i++) {
+			player[i] = new baller();
+			
+		}
+		for (int i = 0; i < player.length; i++) {
+			player[i].setName(scanner);
+			player[i].setTeam(scanner);
+			player[i].setPosition(scanner);
+			player[i].setGoals(scanner);
+			player[i].setAssists(scanner);
+			player[i].setTotalgoals();
+			player[i].setTotalassists();
+			scanner.nextLine();
+		}
+		System.out.println("");
+		System.out.println("");
+
+		System.out.printf("%-20s %-10s %-10s %-10s %-10s %-10s%n", 
+            "Name", "Matches", "AvgGoals", "AvgAssists", "GoalContrib", "goals/assists");
+
+		for (int i = 0; i < player.length; i++) {
+
+			player[i].printdata();
+			
+
+		}
 
 	}
 }
