@@ -14,6 +14,9 @@ public class baller {
 
 	int totalGoals; 
 	int totalAssists;
+	baller(){
+
+	}
 	
 	public void setName(String name) {
 		this.name = name;
@@ -29,7 +32,7 @@ public class baller {
 		System.out.println("enter the goals in each match of this player: ");
 		for (int  i = 0; i < goals.length; i++) {
 			System.out.println("goals in match" + (i+1));
-			goals[i] = scanner.nextInt();
+			this.goals[i] = scanner.nextInt();
 
 		}
 	}
@@ -37,7 +40,7 @@ public class baller {
 		System.out.println("enter the assists  in each match of this player: ");
 		for (int  i = 0; i < assists.length; i++) {
 			System.out.println("assists in match" + (i+1));
-			assists[i] = scanner.nextInt();
+			this.assists[i] = scanner.nextInt();
 
 		}
 	}
@@ -47,6 +50,8 @@ public class baller {
 			sum = sum + assists[i];
 			
 		}
+		this.totalAssists= sum;
+
 
 	}
 	public void setTotalgoals(){
@@ -55,6 +60,7 @@ public class baller {
 			sum = sum + goals[i];
 			
 		}
+		this.totalGoals = sum;
 
 	}
 	
@@ -127,35 +133,51 @@ public class baller {
 		double avggc;
 		double average_goals = getAveragegoals();
 		double average_assists = getAverageassists();
-		avggc = (average_goals + average_assists)/2;
+		avggc = average_goals + average_assists;
 		DecimalFormat df = new DecimalFormat("0.00");
 		String roundedValue = df.format(avggc);
 		double finalavggc = Double.parseDouble(roundedValue);
 		return finalavggc;
 		
 	}
+	public void comparefootballers(baller otherballer){
+		if(this.totalGoals>otherballer.totalGoals && this.totalAssists>otherballer.totalAssists){
+			System.out.println(this.name + " has more goals and assists than " + otherballer.name);
+
+		}
+		else if(this.totalGoals>otherballer.totalGoals && this.totalAssists<= otherballer.totalAssists){
+			System.out.println(this.name + " has more goals than " + otherballer.name+ " but has fewer or equal assists");
+		}
+		else if(this.totalGoals<=otherballer.totalGoals && this.totalAssists> otherballer.totalAssists){
+			System.out.println(this.name + " has fewer or equal goals but has more assists than " + otherballer.name);
+		}
+		else{
+			System.out.println(this.name + " has fewer goals and fewer assists than " + otherballer.name);
+		}
+
+	}
 
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		baller mbappe = new baller();
-		mbappe.setName("mbappe");
-		mbappe.setTeam("psg");
-		mbappe.setPosition("left_wing");
-		mbappe.setGoals(scanner);
-		mbappe.setAssists(scanner);
-		mbappe.setTotalgoals();
-		mbappe.setTotalassists();
-		System.out.println(mbappe.getName());
-		System.out.println(mbappe.getPosition());
-		System.out.println(mbappe.getTeam());
-		System.out.println(mbappe.getTotalAssists());
-		System.out.println(mbappe.getTotalGoals());
-		System.out.println(mbappe.getAveragegoals());
-		System.out.println(mbappe.getAverageassists());
-		System.out.println(mbappe.getAveragegoalcontribution());
+		baller[] player = new baller[5];
+		player[0] = new baller();
+		player[1] = new baller();
+		player[0].setName("messi");
+		player[0].setTeam("barcelona");
+		player[0].setPosition("attacking midfielder");
+		player[0].setGoals(scanner);
+		player[0].setAssists(scanner);
+		player[0].setTotalgoals();
+		player[0].setTotalassists();
+		player[1].setName("ronaldo");
+		player[1].setTeam("realmadrid");
+		player[1].setPosition("center forward ");
+		player[1].setGoals(scanner);
+		player[1].setAssists(scanner);
+		player[1].setTotalgoals();
+		player[1].setTotalassists();
+		player[0].comparefootballers(player[1]);
 
-
-		
 	}
 }
