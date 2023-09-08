@@ -81,6 +81,7 @@ public class baller {
 		for (int i = 0; i < assists.length; i++) {
 			System.out.println("the assists for match"+(i+1)+"for player"+ name+ "is ");
 			System.out.println(assists[i]);
+			
 
 		}
 	}
@@ -103,6 +104,7 @@ public class baller {
 		return position;
 	}
 	public double getAveragegoals(){
+		
 		double avggoals;
 		double sum=0;;
 		DecimalFormat df = new DecimalFormat("0.00");
