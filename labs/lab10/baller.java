@@ -48,13 +48,13 @@ public class baller {
 
 		}
 	}
-	public void setTotalassists(){
+	public void settotalassists(){
 		int sum = 0; 
 		for (int  i = 0; i < assists.length; i++) {
 			sum = sum + assists[i];
 			
 		}
-		this.totalAssists= sum;
+		this.totalassists= sum;
 
 
 	}
