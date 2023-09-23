@@ -1,5 +1,3 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
 
 
@@ -9,76 +7,50 @@ public class Main {
         combatant k2 = new supersoldier("Vikram Rathore", 100);
         combatant k3 = new superagent("Tiger" , 100);
 
+
+        winner = fighting_simulator(k1,k2) ;
+        System.out.println(" \n \n \n ");
+
+        System.out.println(" A new fight has begun ");
+
+        System.out.println(" \n \n \n ");
+
+
+
+        if (winner == 1){
+            fighting_simulator(k1,k3);
+        }
+        else{
+            fighting_simulator(k2,k3);
+        }
+
+
+    }
+
+
+
+    public static int fighting_simulator(combatant a, combatant b){
         while (true) {
+            int winner = 0;
             double rand = Math.random() * 2;
             int choice = (int) Math.ceil(rand);
             if(choice == 1){
-                k1.performSpecialMove(k2);
-                if(k2.getHealth()<=0){
+                a.performSpecialMove(b);
+                if(b.getHealth()<=0){
                     winner = 1;
-                    k1.recover();
-                    break;
+                    a.recover();
+                    return winner;
                 }
             }
             else{
-                k2.performSpecialMove(k1);
-                if(k1.getHealth()<=0){
+                b.performSpecialMove(a);
+                if(a.getHealth()<=0){
                     winner = 2;
-                    k2.recover();
-                    break;
-                }
-            }
+                    b.recover();
+                    return winner;
 
-
-        }
-        System.out.println("The beginning of a new fight ");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-
-        if(winner ==1){
-            while (true) {
-                double rand = Math.random() * 2;
-                int choice = (int) Math.ceil(rand);
-                if(choice == 1){
-                    k1.performSpecialMove(k3);
-                    if(k3.getHealth()<=0){
-                        k1.recover();
-                        break;
-                    }
-                }
-                else{
-                    k3.performSpecialMove(k1);
-                    if(k1.getHealth()<=0){
-                        k3.recover();
-                        break;
-                    }
                 }
             }
         }
-        else if(winner ==2 ) {
-            while (true) {
-                double rand = Math.random() * 2;
-                int choice = (int) Math.ceil(rand);
-                if(choice == 1){
-                    k2.performSpecialMove(k3);
-                    if(k3.getHealth()<=0){
-                        k2.recover();
-                        break;
-                    }
-                }
-                else{
-                    k3.performSpecialMove(k2);
-                    if(k2.getHealth()<=0){
-                        k3.recover();
-                        break;
-                    }
-                }
-            }
-        }
-
     }
 }

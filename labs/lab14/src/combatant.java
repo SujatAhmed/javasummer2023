@@ -14,10 +14,10 @@ public class combatant {
         this.name = name;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
+//    public void setHealth(int health) {
+//        this.health = health;
+//    }
+//
     public int getHealth() {
         return health;
     }
@@ -37,7 +37,8 @@ public class combatant {
     public void performSpecialMove(combatant k) {
         System.out.println("Perform this from the child class");
     }
-    public void depleteHeath(int damage , combatant k ){
+    public void depleteHeath(int damage, combatant k){
         k.health -= damage;
+
     }
 }
