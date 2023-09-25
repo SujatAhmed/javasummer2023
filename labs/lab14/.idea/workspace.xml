@@ -41,10 +41,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/sujat/projects/javasummer23/labs/lab15",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/home/sujat/projects/javasummer23/labs/lab14/src/Main.java",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
@@ -74,11 +76,40 @@
       <updated>1695435889469</updated>
       <workItem from="1695435890480" duration="7090000" />
       <workItem from="1695445840281" duration="2419000" />
-      <workItem from="1695464266579" duration="2187000" />
+      <workItem from="1695464266579" duration="2595000" />
+      <workItem from="1695472609842" duration="688000" />
+      <workItem from="1695473307947" duration="107000" />
+      <workItem from="1695473439570" duration="175000" />
+      <workItem from="1695481173480" duration="5678000" />
+      <workItem from="1695521004021" duration="187000" />
+      <workItem from="1695569233501" duration="1788000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

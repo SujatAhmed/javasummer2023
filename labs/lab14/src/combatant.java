@@ -37,8 +37,8 @@ public class combatant {
     public void performSpecialMove(combatant k) {
         System.out.println("Perform this from the child class");
     }
-    public void depleteHeath(int damage, combatant k){
-        k.health -= damage;
+    public void healthDeplete(int damage  ){
+        this.health -= damage;
 
     }
 }

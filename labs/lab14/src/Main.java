@@ -11,7 +11,7 @@ public class Main {
         winner = fighting_simulator(k1,k2) ;
         System.out.println(" \n \n \n ");
 
-        System.out.println(" A new fight has begun ");
+        System.out.println(" A new fight has begun between the winner of Sujon V Vikram and Tiger ");
 
         System.out.println(" \n \n \n ");
 

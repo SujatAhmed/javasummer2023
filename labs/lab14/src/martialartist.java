@@ -11,7 +11,7 @@ public class martialartist  extends combatant{
         totalDamage = (Math.random() * 5) + 10;
         System.out.println(this.getName() + " has caused " + (int)totalDamage + " damage points to " + k.getName() + " through the majhi smacker");
 
-        depleteHeath( (int)totalDamage,k);
+        k.healthDeplete( (int)totalDamage);
 
         System.out.println("Remaining healthpoints of " + k.getName() + " is " + k.getHealth());
 
