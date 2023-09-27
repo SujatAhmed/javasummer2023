@@ -17,13 +17,15 @@ public class Manager extends  Employee{
     }
     @Override
     public double calculateBonus(double bonus){
-        return (getSalary()*bonus/100)+ (250*(double)employeeCount);
+        return (getSalary()*bonus/100)+ (500*(double)employeeCount);
     }
     @Override
     public void displayInfo(){
         System.out.println("The name of the manager is " + this.getName());
         System.out.println("The salary of the manager is " + this.getSalary());
         System.out.println("The employee count of the manager is " + this.employeeCount );
+        System.out.println("The average salary per each employee under him is" + this.getSalary()/(double) employeeCount);
+        System.out.println("The bonus is " + this.calculateBonus(50));
     }
 
 
