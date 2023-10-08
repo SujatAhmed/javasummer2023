@@ -23,7 +23,7 @@ public class exception2 {
             System.out.println(e.getMessage());
             array();
 
-        }bb
+        }
 
     }
 
