@@ -34,7 +34,18 @@ public class FirePokemon implements Pokemon{
     }
     @Override
     public void attack(){
-        System.out.println(this.name + " has used ember");
+       int choice = (int) Math.ceil(3*Math.random());
+        if(choice == 1){
+            System.out.println(this.name + " has used ember");
+        }
+        else if(choice ==2){
+
+            System.out.println(this.name + " has used Fire Spin");
+        } else if (choice ==3) {
+
+            System.out.println(this.name + " has used Flame Charge");
+
+        }
     }
     public void displayInfo(){
         System.out.println("Name: " + this.name);

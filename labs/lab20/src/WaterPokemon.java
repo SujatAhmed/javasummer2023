@@ -34,8 +34,20 @@ public class WaterPokemon implements Pokemon{
     }
     @Override
     public void attack(){
-        System.out.println(this.name + " has used Water gun");
+        int choice = (int) Math.ceil(3*Math.random());
+        if(choice == 1){
+            System.out.println(this.name + " has used Water Gun");
+        }
+        else if(choice ==2){
+
+            System.out.println(this.name + " has used Bubble");
+        } else if (choice ==3) {
+
+            System.out.println(this.name + " has used Aqua Jet");
+
+        }
     }
+
     public void displayInfo(){
         System.out.println("Name: " + this.name);
         System.out.println("Type: Water");
