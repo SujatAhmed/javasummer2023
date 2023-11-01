@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/home/sujat/projects/javasummer23/Assignment2</OriginalElement>
+  <nodes>
+    <node x="708.3417561641529" y="-467.5482746675187">Action</node>
+    <node x="-888.5109558061039" y="-115.64034479695357">Session</node>
+    <node x="-32.572740522673044" y="-582.7732746675186">User</node>
+    <node x="1288.729928251566" y="-78.97137373623315">Student</node>
+    <node x="-797.0126444966304" y="310.3768046746939">Course</node>
+    <node x="615.2710805296618" y="4.498114092794424">Teacher</node>
+    <node x="-495.88266035536776" y="-98.59506128763542">Main</node>
+    <node x="-3.218510288526886" y="-79.26156476170445">TA</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="TA" target="User" relationship="GENERALIZATION">
+      <point x="-4.897114731079455E-4" y="-84.00043523829555" />
+      <point x="275.781" y="-103.0" />
+      <point x="169.42700000000002" y="-103.0" />
+      <point x="-2.594773269493089E-4" y="210.50027466751862" />
+    </edge>
+    <edge source="Teacher" target="Action" relationship="REALIZATION">
+      <point x="14.999919470338114" y="-120.00011409279443" />
+      <point x="936.771" y="-123.0" />
+      <point x="987.3419999999998" y="-123.0" />
+      <point x="2.4383584684528614E-4" y="65.5004635617911" />
+    </edge>
+    <edge source="Teacher" target="User" relationship="GENERALIZATION">
+      <point x="-8.05296618864304E-5" y="-120.00011409279443" />
+      <point x="921.771" y="-103.0" />
+      <point x="169.42700000000002" y="-103.0" />
+      <point x="-2.594773269493089E-4" y="210.50027466751862" />
+    </edge>
+    <edge source="TA" target="Action" relationship="REALIZATION">
+      <point x="-121.35448971147311" y="-84.00043523829555" />
+      <point x="154.42700000000002" y="-123.0" />
+      <point x="987.3419999999998" y="-123.0" />
+      <point x="2.4383584684528614E-4" y="65.5004635617911" />
+    </edge>
+    <edge source="Student" target="User" relationship="GENERALIZATION">
+      <point x="7.174843403845443E-5" y="-156.99962626376686" />
+      <point x="1576.73" y="-103.0" />
+      <point x="169.42700000000002" y="-103.0" />
+      <point x="-2.594773269493089E-4" y="210.50027466751862" />
+    </edge>
+    <edge source="Student" target="Action" relationship="REALIZATION">
+      <point x="15.000071748434038" y="-156.99962626376686" />
+      <point x="1591.73" y="-123.0" />
+      <point x="987.3419999999998" y="-123.0" />
+      <point x="2.4383584684528614E-4" y="65.5004635617911" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.5037783375314862" showDependencies="false" x="498.0" y="210.9999999999999" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

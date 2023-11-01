@@ -36,7 +36,7 @@ public class FirePokemon implements Pokemon{
     public void attack(){
        int choice = (int) Math.ceil(3*Math.random());
         if(choice == 1){
-            System.out.println(this.name + " has used ember");
+            System.out.println(this.name + " has used Ember");
         }
         else if(choice ==2){
 

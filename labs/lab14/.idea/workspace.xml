@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77c21f9-66e7-4393-9f64-ed7cb58d9e9e" name="Changes" comment="" />
+    <list default="true" id="b77c21f9-66e7-4393-9f64-ed7cb58d9e9e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../lab20/src/FirePokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab20/src/FirePokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab21/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab21/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab21/src/RegularPrisoner.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,6 +89,12 @@
       <workItem from="1695569233501" duration="1788000" />
       <workItem from="1696007093495" duration="656000" />
       <workItem from="1696174373982" duration="58000" />
+      <workItem from="1697471916377" duration="1972000" />
+      <workItem from="1697508805605" duration="31000" />
+      <workItem from="1697532837239" duration="138000" />
+      <workItem from="1697556680352" duration="16000" />
+      <workItem from="1697801882067" duration="404000" />
+      <workItem from="1697864466069" duration="3000" />
     </task>
     <servers />
   </component>

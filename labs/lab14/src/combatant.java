@@ -1,6 +1,6 @@
 public class combatant {
     private String name;
-    private int health;
+    int health;
 
     combatant(){
 
