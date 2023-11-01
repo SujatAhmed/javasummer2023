@@ -34,10 +34,11 @@ public class Student extends User implements Action{
 
         }
         else if (choice==0){
-            System.out.println("Enter the numbers within the given options");
+            Main.sc.nextLine();
             Main.userLogin();
         }
         else{
+            System.out.println("Enter the numbers within the given options");
             handleActions(co);
         }
     }
@@ -131,7 +132,7 @@ public class Student extends User implements Action{
         }
     }
     public void handleActionsForViewing(ArrayList<Course> co){
-        ArrayList<Integer> courseIndex = new ArrayList<>();
+        ArrayList<Integer> courseIndex;
         int choice;
         System.out.println("Your courses: ");
         courseIndex = Main.viewCourse(this);

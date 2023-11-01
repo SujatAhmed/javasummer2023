@@ -25,6 +25,7 @@ public class Teacher extends User implements Action{
             handleActionsForViewing(co);
         }
         else if(choice ==2){
+            Main.sc.nextLine();
             Main.userLogin();
         }
         else {
@@ -43,6 +44,13 @@ public class Teacher extends User implements Action{
         int choice;
 
         System.out.println("Enter the index of the student to be removed or press 0 to go back: ");
+        for(Integer st: sto){
+            for(int i =0 ; i<Main.studentCatalogue.length;i++){
+                if(st==(i+1)){
+                    System.out.println(st + "."+ Main.studentCatalogue[i]);
+                }
+            }
+        }
         try {
             choice = Main.sc.nextInt();
         }catch (InputMismatchException ex){
@@ -76,6 +84,7 @@ public class Teacher extends User implements Action{
         for(Student st : test.getStudents()){
             if(studentName.equals(st.getName())){
                 Main.removeCourse(st,test);
+                System.out.println(st.getName()+ " has been removed from " + test.getName());
                 break;
             }
         }
@@ -138,6 +147,7 @@ public class Teacher extends User implements Action{
                 break;
             }
         }
+        System.out.println("Students of " + test.getName());
         for(Student st : test.getStudents()){
             for(int i = 0; i <Main.studentCatalogue.length;i++){
                 if(Main.studentCatalogue[i].equals(st.getName())){
@@ -165,6 +175,5 @@ public class Teacher extends User implements Action{
         }
 
     }
-
 
 }

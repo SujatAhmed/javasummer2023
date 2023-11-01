@@ -21,16 +21,22 @@ public class TA extends User implements  Action{
         if(choice==1){
             handleActionsForViewing(co);
         }
-        else{
+        else if(choice ==2){
+            Main.sc.nextLine();
             Main.userLogin();
+        }
+        else{
+            handleActions(co);
+            return;
         }
     }
 
     public void handleActionsForViewing(ArrayList<Course> co){
         int choicePrime;
+        ArrayList<Integer> storeCourses;
         Course test = new Course();
         System.out.println("Enter the index of the course you want to view or press 0 to go back: ");
-        Main.viewCourse(this);
+        storeCourses = Main.viewCourse(this);
         try{
 
             choicePrime = Main.sc.nextInt();
@@ -44,8 +50,8 @@ public class TA extends User implements  Action{
             handleActions(co);
             return;
         }
-        if(choicePrime>6||choicePrime<1){
-            System.out.println("Invalid input please try again");
+        if(!Main.checkWithinBounds(storeCourses,choicePrime)){
+            System.out.println("Please enter the indexes that are shown to you below");
             handleActionsForViewing(co);
             return;
         }
@@ -56,6 +62,7 @@ public class TA extends User implements  Action{
                 break;
             }
         }
+        System.out.println("The students of " + test.getName());
         for(Student st : test.getStudents()){
             for(int i = 0; i <Main.studentCatalogue.length;i++){
                 if(Main.studentCatalogue[i].equals(st.getName())){
@@ -66,6 +73,5 @@ public class TA extends User implements  Action{
         this.handleActions(co);
 
     }
-
 }
 

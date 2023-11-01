@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -15,74 +14,50 @@ public class Main {
     }
 
     public static void userLogin(){
+        User testUser = null;
 
         int choice;
-        String ID;
         String Password;
-        int checker = 0;
-        System.out.println("Which one are you: 1.Student 2.Teacher 3.TA\n" );
-        try {
-
-            choice = sc.nextInt();
-
-        }catch (InputMismatchException ex){
-            sc.nextLine();
-            System.out.println("Invalid input type\n");
-            userLogin();
-            return;
-        }
-
-        sc.nextLine();
-        System.out.println("Enter your ID: \n");
-
+        String ID;
+        System.out.println("Enter your ID.(If you're a Student,Teacher or TA, enter your appropriate IDs)");
         ID = sc.nextLine();
-
-
-        for(User iterate: userList){
+        for(User iterate : userList){
             if(iterate.getID().equals(ID)){
-                checker =1 ;
-                break;
+                testUser = iterate;
             }
         }
-
-        if(checker==0){
-            System.out.println("Invalid ID, please try again\n");
+        if(testUser==null){
+            System.out.println("The ID does not match with any user in the database, please try again");
             userLogin();
             return;
         }
-
-        for (User iterate: userList){
-            if(iterate.getID().equals(ID)){
-                System.out.println("Enter your password: \n");
-
-                    Password = sc.nextLine();
-
-                if(iterate.getPassword().equals(Password)){
-                    System.out.println("Welcome, " + iterate.getName()+"\n");
-                    if(choice==1){
-                        Student st = (Student)iterate;
-                        st.handleActions(courseList);
-                        break;
-                    }
-                    else if(choice ==2){
-                        Teacher te = (Teacher)iterate;
-                        te.handleActions(courseList);
-                        break;
-                    }
-                    else if(choice ==3){
-                        TA ta = (TA)iterate;
-                        ta.handleActions(courseList);
-                        break;
-                    }
-                }
-                else{
-                    System.out.println("Invalid password, please try again\n");
-                    userLogin();
-                    break;
-                }
+        System.out.println("Enter your password");
+        Password = sc.nextLine();
+        if(testUser.getPassword().equals(Password)){
+            if(testUser instanceof Student){
+                Student testUser2 = (Student)testUser;
+                System.out.println("Welcome, Student "+ testUser2.getName());
+                testUser2.handleActions(courseList);
+            } else if (testUser instanceof Teacher) {
+                Teacher testUser2 = (Teacher)testUser;
+                System.out.println("Welcome, Teacher "+ testUser2.getName());
+                testUser2.handleActions(courseList);
             }
+            else if(testUser instanceof TA){
+                TA testUser2 = (TA)testUser;
+                System.out.println("Welcome, TA "+ testUser2.getName());
+                testUser2.handleActions(courseList);
+            }
+        }
+        else{
+            System.out.println("Invalid Password, Please try Again");
+            userLogin();
+            return;
         }
     }
+
+
+
     public static void addCourse(Student st, Course co){
         co.addStudent(st);
     }
