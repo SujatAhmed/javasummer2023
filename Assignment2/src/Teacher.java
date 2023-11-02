@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-public class Teacher extends User implements Action{
+public class Teacher extends User {
     Teacher(){
 
     }
@@ -9,7 +9,7 @@ public class Teacher extends User implements Action{
         super(name, email, ID, password);
     }
 
-    @Override
+
     public void handleActions(ArrayList<Course> co){
         int choice;
         System.out.println("1.View Courses 2.Logout");

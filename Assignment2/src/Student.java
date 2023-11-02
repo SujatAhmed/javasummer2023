@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-public class Student extends User implements Action{
+public class Student extends User {
     private String CGPA;
 
     Student(String name, String ID, String email, String password,String CGPA){

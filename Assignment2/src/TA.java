@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-public class TA extends User implements  Action{
+public class TA extends User  {
     TA(String name, String ID, String email, String password){
         super(name, email, ID, password);
     }

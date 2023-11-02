@@ -1,9 +1,12 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Session {
     private static Session session;
     private ArrayList<User> users = new ArrayList<>();
     private ArrayList<Course> courses = new ArrayList<>();
+   // private HashMap<Integer,Course> courseHashMap = new HashMap<Integer,Course>();
+    //private HashMap<Integer,User> userHashMap = new HashMap<Integer,User>();
 
     Session(){
         session = this;
@@ -31,6 +34,8 @@ public class Session {
         courses.add(new Course("CourseB.1", 1,teacherA,taA,"D"));
         courses.add(new Course("CourseC.1", 1,teacherB,taA,"B"));
         courses.add(new Course("CourseC.2", 2,teacherA,taB,"C"));
+
+
 
 
     }
