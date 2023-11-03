@@ -26,6 +26,12 @@ public class DataBase {
         courseList.get(4).setTeacher((Teacher) userList.get("T1"));
         courseList.get(5).setTeacher((Teacher) userList.get("T1"));
         courseList.get(6).setTeacher((Teacher) userList.get("T2"));
+        userList.get("T1").addCourse(courseList.get(1));
+        userList.get("T1").addCourse(courseList.get(2));
+        userList.get("T1").addCourse(courseList.get(4));
+        userList.get("T1").addCourse(courseList.get(5));
+        userList.get("T2").addCourse(courseList.get(3));
+        userList.get("T2").addCourse(courseList.get(6));
 
     }
 
