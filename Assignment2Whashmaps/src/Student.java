@@ -3,6 +3,9 @@ import java.util.HashMap;
 
 public class Student extends User{
     private int SL;
+    Student(){
+
+    }
 
     Student(String Name, String ID, String Password,int SL){
         super( Name,  ID,  Password);
@@ -29,8 +32,8 @@ public class Student extends User{
             handeActionForViewing(courseHashMap);
         }
         else{
-            handleAction(courseHashMap);
-            return;
+            Main.getString();
+            Main.userLogin();
         }
     }
     public void handeActionForViewing(HashMap<Integer,Course> courseHashMap){
@@ -39,11 +42,9 @@ public class Student extends User{
         int choice = Main.getInt();
         if(choice==1){
             handleActionForRemoving(courseHashMap);
-            return;
         }
         else{
             handleAction(courseHashMap);
-            return;
         }
 
     }
@@ -54,10 +55,11 @@ public class Student extends User{
         if(choice==0){
             handleAction(courseHashMap);
         }
-        Course test  = courseHashMap.get(choice);
-        Main.addCourse(this,test);
-        handleActionForAdding(courseHashMap);
-        return;
+        else {
+            Course test = courseHashMap.get(choice);
+            Main.addCourse(this, test);
+            handleActionForAdding(courseHashMap);
+        }
 
     }
     public void handleActionForRemoving(HashMap<Integer,Course> courseHashMap){
@@ -66,12 +68,15 @@ public class Student extends User{
         int choice = Main.getInt();
         if(choice==0){
            handleAction(courseHashMap);
+           return;
         }
-        else {
-            Course test = courseHashMap.get(choice);
-            Main.removeStudentFromCourse(this, test);
+        if(Main.checkIfWithinList(choice,storeIndex)){
+            System.out.println("Enter the numbers that are shown to you");
             handleActionForRemoving(courseHashMap);
-            return;
+        }
+        else{
+            Course test = courseHashMap.get(choice);
+            Main.removeStudentFromCourse(this,test);
         }
     }
 }

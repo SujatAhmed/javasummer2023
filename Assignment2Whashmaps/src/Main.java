@@ -10,34 +10,32 @@ public class Main {
     public static void main(String[] args) {
         userLogin();
     }
+
     public static void userLogin(){
         String ID;
         String Password;
-        User test;
+        User dummyUser;
         System.out.println("Enter your ID");
         ID = getString();
-        test = userHashMap.get(ID);
-        if(test==null){
+        dummyUser = userHashMap.get(ID);
+        if(dummyUser==null){
             userLogin();
             return;
         }
         System.out.println("Enter your Password");
         Password = getString();
-        if(!Password.equals(test.getPassword())){
+        if(!Password.equals(dummyUser.getPassword())){
            userLogin();
            return;
         }
-        test.handleAction(courseHashMap);
+        dummyUser.handleAction(courseHashMap);
     }
 
     public static String getString(){
-        String string = sc.nextLine();
-        String string1 = string;
-        return string1;
+        return sc.nextLine();
     }
     public static int getInt(){
-        int Int = sc.nextInt();
-        return Int;
+        return sc.nextInt();
     }
 
     public static void addCourse(Student student, Course course){
@@ -64,46 +62,21 @@ public class Main {
         }
         return storeSerialNumberOfCourses;
     }
-    public static ArrayList<Integer> viewStudentsForTeacher(int SL, Teacher teacher){
+    public static ArrayList<Integer> viewStudentsForTeacher(  Course course){
         ArrayList<Integer> storeSerialNumberOfStudents = new ArrayList<>();
-        Course test = new Course();
-        for(Course iterate: teacher.getCourseList()){
-            if(SL== iterate.getSL()){
-                test= iterate;
-                break;
-            }
-        }
-        for(Student iterate: test.getStudentList()){
+        for(Student iterate: course.getStudentList()){
             System.out.println(iterate.getSL()+"."+iterate.getName());
             storeSerialNumberOfStudents.add(iterate.getSL());
         }
         return storeSerialNumberOfStudents;
+    }
 
-    }
-    public static void removeCourseAccordingToSL(int SL,Student student){
-       for(Course iterate: student.getCourseList()) {
-           if(SL== iterate.getSL()){
-               removeStudentFromCourse(student,iterate);
-              break;
-           }
-       }
-    }
-    public static void removeStudentAccordingToSL(int Sl,Course course){
-       for(Student iterate: course.getStudentList()) {
-           if(Sl == iterate.getSL()){
-               removeStudentFromCourse(iterate,course);
-           }
-       }
-    }
     public static boolean checkIfWithinList(int SL, ArrayList<Integer> store){
         for(Integer a : store){
             if(a==SL){
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
-
-
-
 }

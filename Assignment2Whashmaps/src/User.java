@@ -7,7 +7,7 @@ public abstract class User {
     private  String Password;
     private ArrayList<Course> courseList ;
 
-    private ArrayList<Integer> SLofCourse;
+
     User(){
 
     }
@@ -17,7 +17,6 @@ public abstract class User {
         this.Password = Password;
         this.ID = ID;
         courseList = new ArrayList<>();
-        SLofCourse = new ArrayList<>();
     }
 
     public String getName() {
@@ -36,11 +35,10 @@ public abstract class User {
         return courseList;
     }
 
-    public ArrayList<Integer> getSLofCourse() {
-        for(Course iterate : this.courseList){
-            SLofCourse.add(iterate.getSL());
-        }
-        return SLofCourse;
+
+    public void addCourse(Course course){
+        courseList.add(course);
     }
+
     public abstract void handleAction(HashMap<Integer,Course> courseHashMap);
 }
