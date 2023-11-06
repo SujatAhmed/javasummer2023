@@ -42,10 +42,12 @@ public class Main {
         student.addCourse(course);
         course.addStudent(student);
     }
+
     public static void removeStudentFromCourse(Student student, Course course){
         student.removeCourse(course);
         course.removeStudent(student);
     }
+
     public static ArrayList<Integer> viewCoursesForStudent(Student student){
         ArrayList<Integer> storeSerialNumberOfCourses = new ArrayList<>();
         for(Course iterate: student.getCourseList()){
@@ -54,6 +56,7 @@ public class Main {
         }
         return  storeSerialNumberOfCourses;
     }
+
     public static ArrayList<Integer> viewCoursesForTeacher(Teacher teacher){
         ArrayList<Integer> storeSerialNumberOfCourses = new ArrayList<>();
         for(Course iterate: teacher.getCourseList()){
@@ -62,14 +65,14 @@ public class Main {
         }
         return storeSerialNumberOfCourses;
     }
+
     public static ArrayList<Integer> viewStudentsForTeacher(  Course course){
-        ArrayList<Integer> storeSerialNumberOfStudents = new ArrayList<>();
         for(Student iterate: course.getStudentList()){
             System.out.println(iterate.getSL()+"."+iterate.getName());
-            storeSerialNumberOfStudents.add(iterate.getSL());
         }
-        return storeSerialNumberOfStudents;
+        return course.getSLofStudents();
     }
+
 
     public static boolean checkIfWithinList(int SL, ArrayList<Integer> store){
         for(Integer a : store){

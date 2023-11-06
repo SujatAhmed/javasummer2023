@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Assignment2Whashmaps.iml" filepath="$PROJECT_DIR$/Assignment2Whashmaps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignment2WithHashmap.iml" filepath="$PROJECT_DIR$/Assignment2WithHashmap.iml" />
     </modules>
   </component>
 </project>

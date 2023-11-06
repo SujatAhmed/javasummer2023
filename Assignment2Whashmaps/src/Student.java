@@ -11,6 +11,9 @@ public class Student extends User{
         super( Name,  ID,  Password);
         this.SL = SL;
     }
+
+
+
     public void addCourse(Course course){
         this.getCourseList().add(course);
     }
