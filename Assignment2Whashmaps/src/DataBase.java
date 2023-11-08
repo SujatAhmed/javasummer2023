@@ -5,8 +5,8 @@ public class DataBase {
     DataBase(){
         createDatabase();
     }
-    private HashMap <Integer, Course> courseList = new HashMap<Integer,Course>();
-    private HashMap <String, User> userList = new HashMap<String,User>();
+    private final HashMap <Integer, Course> courseList = new HashMap<Integer,Course>();
+    private final HashMap <String, User> userList = new HashMap<String,User>();
 
     public void createDatabase(){
         userList.put("S1", new Student("A","S1","password",1)) ;

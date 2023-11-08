@@ -49,21 +49,17 @@ public class Main {
     }
 
     public static ArrayList<Integer> viewCoursesForStudent(Student student){
-        ArrayList<Integer> storeSerialNumberOfCourses = new ArrayList<>();
         for(Course iterate: student.getCourseList()){
             System.out.println(iterate.getSL() + "." + iterate.getName() );
-            storeSerialNumberOfCourses.add(iterate.getSL());
         }
-        return  storeSerialNumberOfCourses;
+        return student.getSLofCourses();
     }
 
     public static ArrayList<Integer> viewCoursesForTeacher(Teacher teacher){
-        ArrayList<Integer> storeSerialNumberOfCourses = new ArrayList<>();
         for(Course iterate: teacher.getCourseList()){
             System.out.println(iterate.getSL() + "." + iterate.getName() );
-            storeSerialNumberOfCourses.add(iterate.getSL());
         }
-        return storeSerialNumberOfCourses;
+        return teacher.getSLofCourses();
     }
 
     public static ArrayList<Integer> viewStudentsForTeacher(  Course course){

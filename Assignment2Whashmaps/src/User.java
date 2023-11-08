@@ -35,6 +35,14 @@ public abstract class User {
         return courseList;
     }
 
+    public ArrayList<Integer> getSLofCourses(){
+        ArrayList<Integer> storeSerialNumberOfCourses = new ArrayList<>();
+        for(Course iterate: this.getCourseList()){
+            storeSerialNumberOfCourses.add(iterate.getSL());
+        }
+        return  storeSerialNumberOfCourses;
+    }
+
 
     public void addCourse(Course course){
         courseList.add(course);
