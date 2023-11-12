@@ -1,33 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        public class ThreadExample2 {
-	   public static void main(String args[]) {
-		      Thread t1 = new Thread (new RunnableDemo( "First  Thread"));
-		      t1.start();
-
-		      Thread t2 = new Thread (new RunnableDemo( "Second Thread"));
-		      t2.start();
-		   }
-}
-class RunnableDemo implements Runnable {
-	   private String threadName;
-	   RunnableDemo( String name){
-	       threadName = name;
-	       System.out.println("Creating " +  threadName );
-	   }
-	   public void run() {
-	      System.out.println("Running " +  threadName );
-	      try {
-	         for(int i = 4; i > 0; i--) {
-	            System.out.println("Thread: " + threadName + ", " + i);
-	            // Let the thread sleep for a while.
-	            Thread.sleep(1000);
-	         }
-	     } catch (InterruptedException e) {
-	         System.out.println("Thread " +  threadName + " interrupted.");
-	     }
-	     System.out.println("Thread " +  threadName + " exiting.");
-	   }
-	}
+        Thread thread1 = new Thread(()-> printStuff(1));
+        Thread thread2 = new Thread(()->printStuff(2));
+        thread1.start();
+        thread2.start();
+    }
+    public static void printStuff(int a){
+        for (int i = 0; i <5 ; i++) {
+            System.out.println(i + " from thread " + a );
+            try{
+                Thread.sleep(1000);
+            }
+            catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
     }
 }

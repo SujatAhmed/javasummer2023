@@ -8,7 +8,15 @@ public class Main {
     public static HashMap<String,User> userHashMap = new DataBase().getUserList();
 
     public static void main(String[] args) {
-        userLogin();
+
+//        SingleFunction sf = (a)-> System.out.println("hello");
+//        testLambda(5,sf);
+//        userLogin();
+//        testLambda(5,(a)-> System.out.println("hello"));
+    }
+    public static void testLambda(int a,SingleFunction sf){
+
+        sf.print(a);
     }
 
     public static void userLogin(){
